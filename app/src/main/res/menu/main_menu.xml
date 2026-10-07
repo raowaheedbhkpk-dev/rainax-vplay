@@ -16,13 +16,30 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/action_view"
-        android:title="@string/show_all"
+        android:id="@+id/action_new_playlist"
+        android:title="@string/new_playlist"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_clear_history"
+        android:title="@string/clear_history"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_open"
+        android:title="@string/open_file"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/action_stream"
         android:title="@string/stream"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/settings"
         app:showAsAction="never" />
 
     <item

@@ -16,6 +16,7 @@ data class VideoItem(
 
 sealed class Row {
     data class Folder(val name: String, val count: Int, val thumb: Uri) : Row()
+    data class Playlist(val name: String, val count: Int, val thumb: Uri?) : Row()
     data class Video(val item: VideoItem) : Row()
 }
 

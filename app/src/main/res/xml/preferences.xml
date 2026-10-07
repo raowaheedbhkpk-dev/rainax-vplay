@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_cat_appearance">
+        <ListPreference
+            app:defaultValue="dark"
+            app:entries="@array/theme_entries"
+            app:entryValues="@array/theme_values"
+            app:iconSpaceReserved="false"
+            app:key="theme"
+            app:title="@string/pref_theme"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_cat_playback">
+        <ListPreference
+            app:defaultValue="1.0"
+            app:entries="@array/speed_entries"
+            app:entryValues="@array/speed_values"
+            app:iconSpaceReserved="false"
+            app:key="default_speed"
+            app:title="@string/pref_default_speed"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            app:defaultValue="10"
+            app:entries="@array/seek_entries"
+            app:entryValues="@array/seek_values"
+            app:iconSpaceReserved="false"
+            app:key="seek_step"
+            app:title="@string/pref_seek_step"
+            app:useSimpleSummaryProvider="true" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="autoplay_next"
+            app:summary="@string/pref_autoplay_next_sum"
+            app:title="@string/pref_autoplay_next" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="remember_position"
+            app:summary="@string/pref_remember_sum"
+            app:title="@string/pref_remember" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="background_audio"
+            app:summary="@string/pref_background_sum"
+            app:title="@string/pref_background" />
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:iconSpaceReserved="false"
+            app:key="auto_pip"
+            app:summary="@string/pref_auto_pip_sum"
+            app:title="@string/pref_auto_pip" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="auto_rotate"
+            app:summary="@string/pref_auto_rotate_sum"
+            app:title="@string/pref_auto_rotate" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_cat_gestures">
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="gesture_bv"
+            app:summary="@string/pref_gesture_bv_sum"
+            app:title="@string/pref_gesture_bv" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="gesture_seek"
+            app:summary="@string/pref_gesture_seek_sum"
+            app:title="@string/pref_gesture_seek" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="gesture_double"
+            app:summary="@string/pref_gesture_double_sum"
+            app:title="@string/pref_gesture_double" />
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:iconSpaceReserved="false"
+            app:key="gesture_long"
+            app:summary="@string/pref_gesture_long_sum"
+            app:title="@string/pref_gesture_long" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_cat_audio">
+        <ListPreference
+            app:defaultValue="auto"
+            app:entries="@array/decoder_entries"
+            app:entryValues="@array/decoder_values"
+            app:iconSpaceReserved="false"
+            app:key="decoder_mode"
+            app:summary="@string/pref_decoder_sum"
+            app:title="@string/pref_decoder" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_cat_subtitles">
+        <ListPreference
+            app:defaultValue="medium"
+            app:entries="@array/sub_size_entries"
+            app:entryValues="@array/sub_size_values"
+            app:iconSpaceReserved="false"
+            app:key="sub_size"
+            app:title="@string/pref_sub_size"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            app:defaultValue="white"
+            app:entries="@array/sub_color_entries"
+            app:entryValues="@array/sub_color_values"
+            app:iconSpaceReserved="false"
+            app:key="sub_color"
+            app:title="@string/pref_sub_color"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            app:defaultValue="outline"
+            app:entries="@array/sub_bg_entries"
+            app:entryValues="@array/sub_bg_values"
+            app:iconSpaceReserved="false"
+            app:key="sub_bg"
+            app:title="@string/pref_sub_bg"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            app:defaultValue="normal"
+            app:entries="@array/sub_pos_entries"
+            app:entryValues="@array/sub_pos_values"
+            app:iconSpaceReserved="false"
+            app:key="sub_pos"
+            app:title="@string/pref_sub_pos"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

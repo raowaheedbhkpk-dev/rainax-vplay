@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tabs">
+        <item>Folders</item>
+        <item>Videos</item>
+        <item>Favourites</item>
+        <item>History</item>
+        <item>Playlists</item>
+    </string-array>
+
+    <string-array name="sort_options">
+        <item>Name</item>
+        <item>Date added</item>
+        <item>Size</item>
+        <item>Duration</item>
+    </string-array>
+
+    <string-array name="theme_entries">
+        <item>Dark</item>
+        <item>AMOLED black</item>
+    </string-array>
+    <string-array name="theme_values">
+        <item>dark</item>
+        <item>amoled</item>
+    </string-array>
+
+    <string-array name="speed_entries">
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>1x (normal)</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="speed_values">
+        <item>0.5</item>
+        <item>0.75</item>
+        <item>1.0</item>
+        <item>1.25</item>
+        <item>1.5</item>
+        <item>2.0</item>
+    </string-array>
+
+    <string-array name="seek_entries">
+        <item>5 seconds</item>
+        <item>10 seconds</item>
+        <item>15 seconds</item>
+        <item>30 seconds</item>
+    </string-array>
+    <string-array name="seek_values">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>30</item>
+    </string-array>
+
+    <string-array name="decoder_entries">
+        <item>Automatic (phone first, FFmpeg as backup)</item>
+        <item>Prefer FFmpeg</item>
+        <item>Phone decoders only</item>
+    </string-array>
+    <string-array name="decoder_values">
+        <item>auto</item>
+        <item>prefer_ffmpeg</item>
+        <item>off</item>
+    </string-array>
+
+    <string-array name="sub_size_entries">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+        <item>Extra large</item>
+    </string-array>
+    <string-array name="sub_size_values">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+        <item>xlarge</item>
+    </string-array>
+
+    <string-array name="sub_color_entries">
+        <item>White</item>
+        <item>Yellow</item>
+        <item>Cyan</item>
+        <item>Green</item>
+    </string-array>
+    <string-array name="sub_color_values">
+        <item>white</item>
+        <item>yellow</item>
+        <item>cyan</item>
+        <item>green</item>
+    </string-array>
+
+    <string-array name="sub_bg_entries">
+        <item>Outline</item>
+        <item>Shadow</item>
+        <item>Dark box</item>
+    </string-array>
+    <string-array name="sub_bg_values">
+        <item>outline</item>
+        <item>shadow</item>
+        <item>box</item>
+    </string-array>
+
+    <string-array name="sub_pos_entries">
+        <item>Low</item>
+        <item>Normal</item>
+        <item>High</item>
+    </string-array>
+    <string-array name="sub_pos_values">
+        <item>low</item>
+        <item>normal</item>
+        <item>high</item>
+    </string-array>
+</resources>

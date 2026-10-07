@@ -11,8 +11,12 @@ import com.bumptech.glide.Glide
 
 class VideoAdapter(
     private val onFolder: (Row.Folder) -> Unit,
+    private val onPlaylist: (Row.Playlist) -> Unit,
+    private val onPlaylistLong: (Row.Playlist) -> Unit,
     private val onVideo: (VideoItem) -> Unit,
-    private val progressOf: (VideoItem) -> Int
+    private val onVideoLong: (VideoItem) -> Unit,
+    private val progressOf: (VideoItem) -> Int,
+    private val isFavourite: (VideoItem) -> Boolean
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var rows: List<Row> = emptyList()
@@ -24,21 +28,25 @@ class VideoAdapter(
 
     override fun getItemCount(): Int = rows.size
 
-    override fun getItemViewType(position: Int): Int =
-        if (rows[position] is Row.Folder) TYPE_FOLDER else TYPE_VIDEO
+    override fun getItemViewType(position: Int): Int = when (rows[position]) {
+        is Row.Folder -> TYPE_FOLDER
+        is Row.Playlist -> TYPE_PLAYLIST
+        is Row.Video -> TYPE_VIDEO
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return if (viewType == TYPE_FOLDER) {
-            FolderHolder(inflater.inflate(R.layout.item_folder, parent, false))
-        } else {
+        return if (viewType == TYPE_VIDEO) {
             VideoHolder(inflater.inflate(R.layout.item_video, parent, false))
+        } else {
+            FolderHolder(inflater.inflate(R.layout.item_folder, parent, false))
         }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (val row = rows[position]) {
-            is Row.Folder -> (holder as FolderHolder).bind(row)
+            is Row.Folder -> (holder as FolderHolder).bindFolder(row)
+            is Row.Playlist -> (holder as FolderHolder).bindPlaylist(row)
             is Row.Video -> (holder as VideoHolder).bind(row.item)
         }
     }
@@ -57,7 +65,8 @@ class VideoAdapter(
             val resolution = if (item.width > 0 && item.height > 0) {
                 "  •  ${item.width}×${item.height}"
             } else ""
-            meta.text = Fmt.size(item.sizeBytes) + resolution
+            val star = if (isFavourite(item)) "★  " else ""
+            meta.text = star + Fmt.size(item.sizeBytes) + resolution
 
             val pct = progressOf(item)
             if (pct in 1..99) {
@@ -69,25 +78,52 @@ class VideoAdapter(
 
             Glide.with(thumb).load(item.uri).centerCrop().into(thumb)
             itemView.setOnClickListener { onVideo(item) }
+            itemView.setOnLongClickListener {
+                onVideoLong(item)
+                true
+            }
         }
     }
 
     inner class FolderHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val thumb: ImageView = view.findViewById(R.id.folderThumb)
+        private val icon: ImageView = view.findViewById(R.id.folderIcon)
         private val name: TextView = view.findViewById(R.id.folderName)
         private val count: TextView = view.findViewById(R.id.folderCount)
 
-        fun bind(folder: Row.Folder) {
+        fun bindFolder(folder: Row.Folder) {
             name.text = folder.name
             count.text = itemView.context.resources
                 .getQuantityString(R.plurals.videos_count, folder.count, folder.count)
+            icon.setImageResource(R.drawable.ic_folder)
             Glide.with(thumb).load(folder.thumb).centerCrop().into(thumb)
             itemView.setOnClickListener { onFolder(folder) }
+            itemView.setOnLongClickListener(null)
+            itemView.isLongClickable = false
+        }
+
+        fun bindPlaylist(playlist: Row.Playlist) {
+            name.text = playlist.name
+            count.text = itemView.context.resources
+                .getQuantityString(R.plurals.videos_count, playlist.count, playlist.count)
+            icon.setImageResource(R.drawable.ic_playlist)
+            if (playlist.thumb != null) {
+                Glide.with(thumb).load(playlist.thumb).centerCrop().into(thumb)
+            } else {
+                Glide.with(thumb).clear(thumb)
+                thumb.setImageDrawable(null)
+            }
+            itemView.setOnClickListener { onPlaylist(playlist) }
+            itemView.setOnLongClickListener {
+                onPlaylistLong(playlist)
+                true
+            }
         }
     }
 
     private companion object {
         const val TYPE_FOLDER = 0
         const val TYPE_VIDEO = 1
+        const val TYPE_PLAYLIST = 2
     }
 }

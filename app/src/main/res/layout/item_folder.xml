@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
@@ -22,14 +23,14 @@
             android:scaleType="centerCrop" />
 
         <ImageView
+            android:id="@+id/folderIcon"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_gravity="bottom|start"
             android:layout_margin="4dp"
             android:contentDescription="@null"
             android:src="@drawable/ic_folder"
-            app:tint="@color/orange"
-            xmlns:app="http://schemas.android.com/apk/res-auto" />
+            app:tint="@color/orange" />
     </FrameLayout>
 
     <LinearLayout
