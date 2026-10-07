@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rainax Vplay</string>
+
+    <string name="search">Search</string>
+    <string name="sort">Sort</string>
+    <string name="sort_by">Sort by</string>
+    <string name="show_all">All videos</string>
+    <string name="show_folders">Folders</string>
+    <string name="stream">Network stream</string>
+    <string name="stream_title">Open network stream</string>
+    <string name="stream_hint">https://example.com/video.mp4</string>
+    <string name="play">Play</string>
+    <string name="about">About</string>
+    <string name="about_message">Rainax Vplay 1.0.0\n\nA free, ad-free video player.\nSupports gestures, subtitles, network streams and picture-in-picture.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="no_videos">No videos found</string>
+    <string name="permission_needed">Allow access to your videos to see them here.</string>
+    <string name="grant_permission">Allow access</string>
+
+    <string-array name="sort_options">
+        <item>Name</item>
+        <item>Date added</item>
+        <item>Size</item>
+        <item>Duration</item>
+    </string-array>
+
+    <plurals name="videos_count">
+        <item quantity="one">%d video</item>
+        <item quantity="other">%d videos</item>
+    </plurals>
+
+    <string name="back">Back</string>
+    <string name="subtitles">Add subtitle file</string>
+    <string name="aspect_ratio">Aspect ratio</string>
+    <string name="rotate">Rotate screen</string>
+    <string name="pip">Picture in picture</string>
+    <string name="lock">Lock controls</string>
+    <string name="unlock">Unlock controls</string>
+    <string name="locked">Controls locked</string>
+    <string name="unlocked">Controls unlocked</string>
+    <string name="aspect_fit">Fit</string>
+    <string name="aspect_fill">Stretch</string>
+    <string name="aspect_zoom">Zoom</string>
+    <string name="cannot_play">Cannot play this video</string>
+    <string name="nothing_to_play">Nothing to play</string>
+    <string name="subtitle_added">Subtitle loaded</string>
+    <string name="subtitle_unsupported">Unsupported subtitle file. Use .srt, .vtt, .ass, .ssa or .ttml</string>
+    <string name="brightness">Brightness %d%%</string>
+    <string name="volume">Volume %d%%</string>
+    <string name="speed_2x">2x speed</string>
+</resources>
